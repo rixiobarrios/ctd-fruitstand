@@ -8,24 +8,17 @@ const FruitTile = ({ props }) => {
         setFruit({ ...props });
     }, [props]);
 
-    const eatFruit = async (e) => {
+    const fruitPUT = async (e) => {
         e.preventDefault();
+        console.log(e.target.value);
+        const body = {};
+        if (e.target.value === 'add') {
+            body.countInStock = fruit.countInStock + 1;
+        } else if (e.target.value === 'eat') {
+            body.countInStock = fruit.countInStock - 1;
+        }
         const id = fruit._id;
-        const body = { countInStock: fruit.countInStock - 1 };
-        console.log(id, body);
-        const res = await axios.put(
-            `http://localhost:1337/api/fruits/${id}/`,
-            body
-        );
-        console.log(res.data);
-        setFruit({ ...res.data });
-        console.log(fruit);
-    };
-
-    const addFruit = async (e) => {
-        e.preventDefault();
-        const id = fruit._id;
-        const body = { countInStock: fruit.countInStock + 1 };
+        // const body = { countInStock: fruit.countInStock + 1 };
         console.log(id, body);
         const res = await axios.put(
             `http://localhost:1337/api/fruits/${id}/`,
@@ -41,8 +34,12 @@ const FruitTile = ({ props }) => {
             <img src={fruit.image} alt={fruit.name} />
             <h2>{fruit.name}</h2>
             <h3>Count: {fruit.countInStock}</h3>
-            <button onClick={addFruit}>Add</button>
-            <button onClick={eatFruit}>Eat</button>
+            <button value="add" onClick={fruitPUT}>
+                Add
+            </button>
+            <button value="eat" onClick={fruitPUT}>
+                Eat
+            </button>
         </div>
     );
 };
