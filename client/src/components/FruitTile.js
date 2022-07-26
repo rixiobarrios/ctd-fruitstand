@@ -18,15 +18,17 @@ const FruitTile = ({ props }) => {
             body.countInStock = fruit.countInStock - 1;
         }
         const id = fruit._id;
-        // const body = { countInStock: fruit.countInStock + 1 };
         console.log(id, body);
         const res = await axios.put(
             `http://localhost:1337/api/fruits/${id}/`,
             body
         );
-        console.log(res.data);
+        console.log(res.data.countInStock);
         setFruit({ ...res.data });
-        console.log(fruit);
+        if (res.data.countInStock === 0) {
+            e.target.disabled = true;
+            alert('out of stock');
+        }
     };
 
     return (
