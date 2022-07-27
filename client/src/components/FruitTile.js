@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const FruitTile = ({ props }) => {
     const [fruit, setFruit] = useState([]);
+    const [disabled, setDisabled] = useState(false);
 
     useEffect(() => {
         setFruit({ ...props });
@@ -25,14 +26,12 @@ const FruitTile = ({ props }) => {
         );
         console.log(res.data.countInStock);
         setFruit({ ...res.data });
-        const eatBnt = document.getElementById('eat-btn');
+        // const eatBnt = document.getElementById('eat-btn');
         if (res.data.countInStock === 0) {
             // e.target.disabled = true;
-            eatBnt.disabled = true;
-            console.log(eatBnt);
-            // alert('out of stock');
+            setDisabled(true);
         } else {
-            eatBnt.disabled = false;
+            setDisabled(false);
         }
     };
 
@@ -44,7 +43,12 @@ const FruitTile = ({ props }) => {
             <button value="add" onClick={fruitPUT}>
                 Add
             </button>
-            <button id="eat-btn" value="eat" onClick={fruitPUT}>
+            <button
+                id="eat-btn"
+                disabled={disabled}
+                value="eat"
+                onClick={fruitPUT}
+            >
                 Eat
             </button>
         </div>
