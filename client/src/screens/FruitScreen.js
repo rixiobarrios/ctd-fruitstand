@@ -23,7 +23,6 @@ const FruitScreen = () => {
         <div>
             FruitScreen
             {fruits.map((fruit, idx) => {
-                // console.log(fruit);
                 return <FruitTile key={idx} props={fruit} />;
             })}
         </div>

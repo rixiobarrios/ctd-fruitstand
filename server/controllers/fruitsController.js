@@ -28,8 +28,8 @@ const updateFruit = asyncHandler(async (req, res) => {
         const updatedFruit = await fruit.save();
         console.log(updatedFruit.countInStock);
         if (updatedFruit.countInStock == 0) {
-            console.log('out of stock, emailing vendor new order');
-            // mailer(fruit.name);
+            // console.log(`Your ${fruit.name} stock is now 0`);
+            mailer(fruit.name);
         }
         res.json(updatedFruit);
     } else {

@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import util from 'util';
+// import util from 'util';
 
 async function mailer(fruit) {
     let transporter = nodemailer.createTransport({
@@ -16,8 +16,8 @@ async function mailer(fruit) {
     let mailOptions = {
         from: 'ctdfruitstand@gmail.com',
         to: 'dicake6059@chimpad.com',
-        subject: 'Fruit Order Tracker',
-        text: `Your stock of ${fruit} is now 0`,
+        subject: 'Fruit Inventory Tracker',
+        text: `Your ${fruit} stock is now 0`,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

@@ -26,9 +26,7 @@ const FruitTile = ({ props }) => {
         );
         console.log(res.data.countInStock);
         setFruit({ ...res.data });
-        // const eatBnt = document.getElementById('eat-btn');
         if (res.data.countInStock === 0) {
-            // e.target.disabled = true;
             setDisabled(true);
         } else {
             setDisabled(false);
