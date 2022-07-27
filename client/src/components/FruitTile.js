@@ -25,9 +25,14 @@ const FruitTile = ({ props }) => {
         );
         console.log(res.data.countInStock);
         setFruit({ ...res.data });
+        const eatBnt = document.getElementById('eat-btn');
         if (res.data.countInStock === 0) {
-            e.target.disabled = true;
-            alert('out of stock');
+            // e.target.disabled = true;
+            eatBnt.disabled = true;
+            console.log(eatBnt);
+            // alert('out of stock');
+        } else {
+            eatBnt.disabled = false;
         }
     };
 
@@ -39,7 +44,7 @@ const FruitTile = ({ props }) => {
             <button value="add" onClick={fruitPUT}>
                 Add
             </button>
-            <button value="eat" onClick={fruitPUT}>
+            <button id="eat-btn" value="eat" onClick={fruitPUT}>
                 Eat
             </button>
         </div>

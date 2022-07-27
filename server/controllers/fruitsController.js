@@ -1,6 +1,7 @@
 import asyncHandler from 'express-async-handler';
 import Fruit from '../models/Fruits.js';
 import util from 'util';
+import mailer from '../services/mailer.js';
 
 const getAllFruits = asyncHandler(async (req, res) => {
     const fruits = await Fruit.find();
@@ -25,6 +26,11 @@ const updateFruit = asyncHandler(async (req, res) => {
     if (fruit) {
         fruit.countInStock = countInStock;
         const updatedFruit = await fruit.save();
+        console.log(updatedFruit.countInStock);
+        if (updatedFruit.countInStock == 0) {
+            console.log('out of stock, emailing vendor new order');
+            // mailer(fruit.name);
+        }
         res.json(updatedFruit);
     } else {
         res.status(404);
