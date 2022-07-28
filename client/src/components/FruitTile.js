@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import { Card } from '@material-ui/core/Card';
+// import Card from '@mui/material/Card';
+// import { Card } from '@mui/material';
+// import Button from '@mui/material/Button';
 
 const FruitTile = ({ props }) => {
     const [fruit, setFruit] = useState([]);
@@ -38,7 +42,7 @@ const FruitTile = ({ props }) => {
             <img src={fruit.image} alt={fruit.name} />
             <h2>{fruit.name}</h2>
             <h3>Count: {fruit.countInStock}</h3>
-            <button value="add" onClick={fruitPUT}>
+            <button variant="contained" value="add" onClick={fruitPUT}>
                 Add
             </button>
             <button

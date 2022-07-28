@@ -1,4 +1,4 @@
-# ctd-fruitstand
+
 ![CTD_Logo1](https://user-images.githubusercontent.com/55994508/163671705-1ac3ca46-1f1c-4474-b26b-007ebb019f4d.jpg)
 
 # Overview
@@ -67,9 +67,9 @@ The following are not necessary, but are examples of things that would be nice b
 
 # The Project
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/22f29b1c-c0c6-424b-b464-570e1496d694/deploy-status)](https://app.netlify.com/sites/ctd-prework-swapi/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/22f29b1c-c0c6-424b-b464-570e1496d694/deploy-status)](https://app.netlify.com/sites/ctd-fruitstand/deploys)
 
-![starwarscall](https://user-images.githubusercontent.com/55994508/163671473-5f1cda65-9dc3-46df-be6e-37b33d6752eb.jpg)
+![fruitstand](https://user-images.githubusercontent.com/55994508/181345728-84f4d283-594a-4fb6-9a8e-6ff8eef68baf.jpg)
 
 1. The project uses React, CSS and Javascript.
 
