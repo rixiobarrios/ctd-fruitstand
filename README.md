@@ -69,7 +69,7 @@ The following are not necessary, but are examples of things that would be nice b
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/22f29b1c-c0c6-424b-b464-570e1496d694/deploy-status)](https://app.netlify.com/sites/ctd-fruitstand/deploys)
 
-![fruitstand](https://user-images.githubusercontent.com/55994508/181345728-84f4d283-594a-4fb6-9a8e-6ff8eef68baf.jpg)
+![fruitstandlogo](https://user-images.githubusercontent.com/55994508/181415630-757d113c-78ab-4ad6-b938-978659e7054c.jpg)
 
 1. The project uses React, CSS and Javascript.
 
@@ -77,7 +77,7 @@ The following are not necessary, but are examples of things that would be nice b
 
 3. The data for this project was scrapped from <source below>
 
-`http https://swapi.dev/api/people/1/`
+`https://www.melissas.com/`
 
 Sample code:
 
