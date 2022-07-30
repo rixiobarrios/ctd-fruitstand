@@ -5,7 +5,7 @@ import FruitScreen from './screens/FruitScreen.js';
 function App() {
     return (
         <div className="App">
-            <header className="App-header"></header>
+            <header className="App-header">App Header</header>
             <FruitScreen />
         </div>
     );
