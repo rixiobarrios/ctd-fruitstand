@@ -18,4 +18,4 @@ app.use(morgan('dev'));
 
 app.use('/api/fruits', fruitRoutes);
 
-app.listen('1337', console.log('...running on 1337'));
+app.listen('5000', console.log('...running on 5000'));

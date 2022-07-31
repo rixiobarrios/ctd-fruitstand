@@ -1,6 +1,6 @@
 import connectDB from './config/db.js';
 import dotenv from 'dotenv';
-import fruits from './data/fruitsData.js';
+import fruits from './data/data.js';
 import Fruits from './models/Fruits.js';
 import util from 'util';
 

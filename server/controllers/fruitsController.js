@@ -13,7 +13,7 @@ const getFruitById = asyncHandler(async (req, res) => {
     const fruit = await Fruit.findById(req.params.id);
 
     if (fruit) {
-        res.json(fruit);
+        res.json([fruit]);
     } else {
         res.status(404);
         throw new Error('Fruit not found');

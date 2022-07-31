@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { Card } from '@material-ui/core/Card';
 // import Card from '@mui/material/Card';
-// import { Card } from '@mui/material';
-// import Button from '@mui/material/Button';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
+// import Typography from '@mui/material/Typography';
+// import { Button, CardActionArea, CardActions } from '@mui/material';
 
 const FruitTile = ({ props }) => {
     const [fruit, setFruit] = useState([]);
@@ -56,5 +57,49 @@ const FruitTile = ({ props }) => {
         </div>
     );
 };
+
+//     return (
+//         <Card sx={{ maxWidth: 345 }}>
+//             <CardActionArea>
+//                 <CardMedia
+//                     component="img"
+//                     height="140"
+//                     image={fruit.image}
+//                     alt={fruit.name}
+//                 />
+//                 <CardContent>
+//                     <Typography gutterBottom variant="h5" component="div">
+//                         {fruit.name}
+//                     </Typography>
+//                     <Typography variant="body2" color="text.secondary">
+//                         Count: {fruit.countInStock}
+//                     </Typography>
+//                 </CardContent>
+//             </CardActionArea>
+//             <CardActions>
+//                 <Button
+//                     size="small"
+//                     color="primary"
+//                     value="add"
+//                     onClick={fruitPUT}
+//                 >
+//                     Add
+//                 </Button>
+//             </CardActions>
+//             <CardActions>
+//                 <Button
+//                     size="small"
+//                     color="primary"
+//                     id="eat-btn"
+//                     disabled={disabled}
+//                     value="eat"
+//                     onClick={fruitPUT}
+//                 >
+//                     Eat
+//                 </Button>
+//             </CardActions>
+//         </Card>
+//     );
+// };
 
 export default FruitTile;

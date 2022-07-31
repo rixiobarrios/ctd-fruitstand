@@ -1,15 +1,15 @@
 import mongoose from 'mongoose';
 
-const fruitsSchema = mongoose.Schema({
+const veggiesSchema = mongoose.Schema({
     name: {
-        type: String,
+        type: 'String',
         required: true,
     },
     image: {
-        type: String,
+        type: 'String',
     },
     details: {
-        type: String,
+        type: 'string',
     },
     price: {
         type: Number,
@@ -25,14 +25,10 @@ const fruitsSchema = mongoose.Schema({
         type: Number,
     },
     description: {
-        type: String,
-    },
-    itemType: {
-        type: String,
-        enum: ['Fruit', 'Veggie', 'InSeason', 'Basket'],
+        type: 'string',
     },
 });
 
-const Fruit = mongoose.model('Fruit', fruitsSchema);
+const Fruit = mongoose.model('Veggies', veggiesSchema);
 
-export default Fruit;
+export default Veggies;
