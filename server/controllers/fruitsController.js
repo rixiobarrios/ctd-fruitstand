@@ -4,9 +4,15 @@ import util from 'util';
 import mailer from '../services/mailer.js';
 
 const getAllFruits = asyncHandler(async (req, res) => {
-    const fruits = await Fruit.find();
+    const fruits = await Fruit.find({ itemType: 'Fruit' });
     console.log(util.inspect(fruits, false, null, true));
     res.json(fruits);
+});
+
+const getAllVeggies = asyncHandler(async (req, res) => {
+    const veggies = await Fruit.find({ itemType: 'Veggie' });
+    console.log(util.inspect(veggies, false, null, true));
+    res.json(veggies);
 });
 
 const getFruitById = asyncHandler(async (req, res) => {
@@ -38,4 +44,4 @@ const updateFruit = asyncHandler(async (req, res) => {
     }
 });
 
-export { getAllFruits, getFruitById, updateFruit };
+export { getAllFruits, getAllVeggies, getFruitById, updateFruit };
