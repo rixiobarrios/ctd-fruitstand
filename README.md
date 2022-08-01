@@ -81,29 +81,42 @@ The following are not necessary, but are examples of things that would be nice b
 
 Sample code:
 
-```    const fruitPUT = async (e) => {
-        e.preventDefault();
-        console.log(e.target.value);
-        const body = {};
-        if (e.target.value === 'add') {
-            body.countInStock = fruit.countInStock + 1;
-        } else if (e.target.value === 'eat') {
-            body.countInStock = fruit.countInStock - 1;
-        }
-        const id = fruit._id;
-        console.log(id, body);
-        const res = await axios.put(
-            `http://localhost:1337/api/fruits/${id}/`,
-            body
-        );
-        console.log(res.data.countInStock);
-        setFruit({ ...res.data });
-        if (res.data.countInStock === 0) {
-            setDisabled(true);
-        } else {
-            setDisabled(false);
-        }
-    };
+```        {
+        name: 'Deluxe Exotic and Tropical Fruit Basket',
+        image: 'https://cdn.shopify.com/s/files/1/0336/7167/5948/products/image-of-deluxe-exotic-and-tropical-fruit-basket-gifts-28658361729068_512x512.jpg?v=1627864559',
+        details:
+            'https://www.melissas.com/collections/gift-baskets/products/deluxe-exotic-and-tropical-fruit-basket',
+        price: 84.49,
+        countInStock: 6,
+        rating: 2.96,
+        description:
+            "Quantity/Pack:  7 - 8 lbs.\nLooking for a fresh, juicy selection of the season's best exotic fruits?\n\nThis stunning assortment arranged in a woven basket with cellophane wrapping and colorful ribbon may include (depending on seasonal availability): Asian Pear, Baby Pineapple, Blood Orange, Cherimoya, Feijoas, Kiwis, Kumquats, Lychees, Mango, Papaya, Passion Fruit, Persimmons, Pomegranate, Rambutans, Specialty Bananas, Starfruit and Tamarillos.\n\nThe following prohibit shipment of any citrus into their state: Arizona, Florida, Georgia, Louisiana, Texas and Hawaii. If you would like to order this gift for shipment to an address in AZ, FL, GA, LA, TX, or HI, we will substitute the citrus for another seasonal fruit variety.\nHawaii prohibits the shipment of any pineapple into their state.\n\nThis item is perishable and must ship at least 2nd day.\nAny orders that do not have the appropriate shipping method selected will not be shipped. For assistance, please call us at 800-588-0151.\n",
+        itemType: 'Basket',
+    },
+    {
+        name: 'Baby Vegetables Basket',
+        image: 'https://cdn.shopify.com/s/files/1/0336/7167/5948/products/add-a-knife-to-this-item-image-of-baby-vegetables-basket-gifts-28663296393260_512x512.jpg?v=1628086387',
+        details:
+            'https://www.melissas.com/collections/gift-baskets/products/baby-vegetables-basket',
+        price: 77.49,
+        countInStock: 8,
+        rating: 3.62,
+        description:
+            'Quantity/Pack:  6 lbs.\nSeasonality:  Year Round\n\n\nEach delicately woven basket is brimming with fresh vegetables which are artfully arranged to provide a charming presentation.\n',
+        itemType: 'Basket',
+    },
+    {
+        name: 'Baby Pineapple Crate',
+        image: 'https://cdn.shopify.com/s/files/1/0336/7167/5948/products/image-of-baby-pineapple-crate-fruit-14764298731564_512x512.jpg?v=1616890602',
+        details:
+            'https://www.melissas.com/collections/gift-baskets/products/baby-pineapple-crate',
+        price: 82.49,
+        countInStock: 9,
+        rating: 2.94,
+        description:
+            'Quantity/Pack: 6 - 7 count\nSeasonality: Year Round\nOrigin: South Africa\n\nSouth Africa is noted for these baby pineapples, also known as Queen Victoria Pineapples, which thrive in the hot and humid climate.\n\nThese sweet, tart baby pineapples have a bold, rich flavor. They have a fragrant, golden skin and brilliantly colored yellow flesh. South African baby pineapples are entirely edible, with no need to remove the core. The size of an average fruit is about 4.5 inches high (not including leaves) and about 3.5 inches in diameter, making it a perfect individual serving.\n\nPacked in a reusable wood crate, our South African Baby Pineapples serve as a wonderfully exotic gift.\n\nLook for fruit with bright coloring and deep green leaves. Avoid pineapples with brown or soft spots and dry brown leaves. Keep in refrigeration for up to ten days.\n\nRemove crown and a small portion of the base, or simply cut in half, leaving crown on, for a beautiful, succulent plate garnish.\n\nNo need to cut out the core of the pineapple, it is entirely edible and not tough at all. These pineapples are low in acid and delicious when eaten fresh out of hand or added to fruit salads.\n\nHawaii prohibits the shipment of any pineapple into their state.\n\nThis item is perishable and must ship at least 2nd day. \nAny orders that do not have the appropriate shipping method selected will not be shipped. For assistance, please call us at 800-588-0151.\n',
+        itemType: 'Basket',
+    },
 ```
 
 4. How to download and run this project:

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import FruitTile from '../components/FruitTile';
 // import Grid from '@mui/material/Grid';
-// import Paper from '@mui/material/Paper';
 
 const FruitScreen = () => {
     const [fruits, setFruits] = useState([]);

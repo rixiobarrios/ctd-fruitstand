@@ -19,6 +19,7 @@ const FruitDetailScreen = () => {
 
     useEffect(() => {
         getFruits();
+        // eslint-disable-next-line
     }, []);
     return (
         <div>

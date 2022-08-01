@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+// import Grid from '@mui/material/Grid';
 // import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
+import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
-// import Typography from '@mui/material/Typography';
-// import { Button, CardActionArea, CardActions } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import {
+    Button,
+    Card,
+    CardActionArea,
+    CardActions,
+    CardMedia,
+} from '@mui/material';
 
 const FruitTile = ({ props }) => {
     const [fruit, setFruit] = useState([]);
@@ -16,6 +23,7 @@ const FruitTile = ({ props }) => {
 
     const fruitPUT = async (e) => {
         e.preventDefault();
+        console.log('target value');
         console.log(e.target.value);
         const body = {};
         if (e.target.value === 'add') {
@@ -24,11 +32,13 @@ const FruitTile = ({ props }) => {
             body.countInStock = fruit.countInStock - 1;
         }
         const id = fruit._id;
+        console.log('from id and body');
         console.log(id, body);
         const res = await axios.put(
-            `http://localhost:1337/api/fruits/${id}/`,
+            `http://localhost:5000/api/fruits/${id}/`,
             body
         );
+        console.log('From fruit tile');
         console.log(res.data.countInStock);
         setFruit({ ...res.data });
         if (res.data.countInStock === 0) {
@@ -38,68 +48,70 @@ const FruitTile = ({ props }) => {
         }
     };
 
+    //     return (
+    //         <div>
+    //             <img src={fruit.image} alt={fruit.name} />
+    //             <h2>{fruit.name}</h2>
+    //             <h3>Count: {fruit.countInStock}</h3>
+    //             <button variant="contained" value="add" onClick={fruitPUT}>
+    //                 Add
+    //             </button>
+    //             <button
+    //                 id="eat-btn"
+    //                 disabled={disabled}
+    //                 value="eat"
+    //                 onClick={fruitPUT}
+    //             >
+    //                 Eat
+    //             </button>
+    //         </div>
+    //     );
+    // };
+
     return (
-        <div>
-            <img src={fruit.image} alt={fruit.name} />
-            <h2>{fruit.name}</h2>
-            <h3>Count: {fruit.countInStock}</h3>
-            <button variant="contained" value="add" onClick={fruitPUT}>
-                Add
-            </button>
-            <button
-                id="eat-btn"
-                disabled={disabled}
-                value="eat"
-                onClick={fruitPUT}
-            >
-                Eat
-            </button>
-        </div>
+        <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+                <CardMedia
+                    component="img"
+                    height="340"
+                    image={fruit.image}
+                    alt={fruit.name}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        {fruit.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        Count: {fruit.countInStock}
+                    </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button
+                    variant="contained"
+                    size="small"
+                    color="primary"
+                    value="add"
+                    onClick={fruitPUT}
+                >
+                    Add
+                </Button>
+            </CardActions>
+            <CardActions>
+                <Button
+                    variant="contained"
+                    size="small"
+                    color="primary"
+                    id="eat-btn"
+                    disabled={disabled}
+                    value="eat"
+                    onClick={fruitPUT}
+                >
+                    Eat
+                </Button>
+            </CardActions>
+        </Card>
     );
 };
-
-//     return (
-//         <Card sx={{ maxWidth: 345 }}>
-//             <CardActionArea>
-//                 <CardMedia
-//                     component="img"
-//                     height="140"
-//                     image={fruit.image}
-//                     alt={fruit.name}
-//                 />
-//                 <CardContent>
-//                     <Typography gutterBottom variant="h5" component="div">
-//                         {fruit.name}
-//                     </Typography>
-//                     <Typography variant="body2" color="text.secondary">
-//                         Count: {fruit.countInStock}
-//                     </Typography>
-//                 </CardContent>
-//             </CardActionArea>
-//             <CardActions>
-//                 <Button
-//                     size="small"
-//                     color="primary"
-//                     value="add"
-//                     onClick={fruitPUT}
-//                 >
-//                     Add
-//                 </Button>
-//             </CardActions>
-//             <CardActions>
-//                 <Button
-//                     size="small"
-//                     color="primary"
-//                     id="eat-btn"
-//                     disabled={disabled}
-//                     value="eat"
-//                     onClick={fruitPUT}
-//                 >
-//                     Eat
-//                 </Button>
-//             </CardActions>
-//         </Card>
-//     );
-// };
 
 export default FruitTile;
