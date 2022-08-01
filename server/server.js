@@ -16,6 +16,6 @@ app.use(cors({ origin: '*' }));
 
 app.use(morgan('dev'));
 
-app.use('/api/fruits', fruitRoutes);
+app.use('/api/', fruitRoutes);
 
 app.listen('5000', console.log('...running on 5000'));

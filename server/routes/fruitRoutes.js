@@ -10,7 +10,7 @@ import {
 
 const router = express.Router();
 
-router.route('/').get(getAllFruits);
+router.route('/fruits').get(getAllFruits);
 router.route('/veggies').get(getAllVeggies);
 router.route('/baskets').get(getAllBaskets);
 router.route('/inSeason').get(getAllInSeason);
