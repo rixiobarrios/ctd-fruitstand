@@ -4,6 +4,7 @@ import axios from 'axios';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import {
+    Stack,
     Button,
     Card,
     CardActionArea,
@@ -42,27 +43,6 @@ const FruitTile = ({ props }) => {
             setDisabled(false);
         }
     };
-
-    //     return (
-    //         <div>
-    //             <img src={fruit.image} alt={fruit.name} />
-    //             <h2>{fruit.name}</h2>
-    //             <h3>Count: {fruit.countInStock}</h3>
-    //             <button variant="contained" value="add" onClick={fruitPUT}>
-    //                 Add
-    //             </button>
-    //             <button
-    //                 id="eat-btn"
-    //                 disabled={disabled}
-    //                 value="eat"
-    //                 onClick={fruitPUT}
-    //             >
-    //                 Eat
-    //             </button>
-    //         </div>
-    //     );
-    // };
-
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
@@ -84,28 +64,28 @@ const FruitTile = ({ props }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button
-                    variant="contained"
-                    size="small"
-                    color="primary"
-                    value="add"
-                    onClick={fruitPUT}
-                >
-                    Add
-                </Button>
-            </CardActions>
-            <CardActions>
-                <Button
-                    variant="contained"
-                    size="small"
-                    color="primary"
-                    id="eat-btn"
-                    disabled={disabled}
-                    value="eat"
-                    onClick={fruitPUT}
-                >
-                    Eat
-                </Button>
+                <Stack spacing={1} direction="row">
+                    <Button
+                        variant="contained"
+                        size="small"
+                        color="primary"
+                        value="add"
+                        onClick={fruitPUT}
+                    >
+                        Add
+                    </Button>
+                    <Button
+                        variant="contained"
+                        size="small"
+                        color="primary"
+                        id="eat-btn"
+                        disabled={disabled}
+                        value="eat"
+                        onClick={fruitPUT}
+                    >
+                        Eat
+                    </Button>
+                </Stack>
             </CardActions>
         </Card>
     );

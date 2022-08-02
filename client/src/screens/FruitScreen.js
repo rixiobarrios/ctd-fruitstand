@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import FruitTile from '../components/FruitTile';
-// import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 
 const FruitScreen = () => {
     const [fruits, setFruits] = useState([]);
@@ -30,69 +32,48 @@ const FruitScreen = () => {
         getFruits();
     }, []);
     return (
-        <div id="allFruits">
-            FruitScreen
-            <input id="search" value={searchTerm} onChange={handleSearch} />
-            <div>{searchTerm}</div>
-            {searchedFruits
-                ? searchedFruits.map((fruit, idx) => {
-                      return <FruitTile key={idx} props={fruit} />;
-                  })
-                : fruits.map((fruit, idx) => {
-                      return <FruitTile key={idx} props={fruit} />;
-                  })}
-        </div>
+        <Box sx={{ flexGrow: 1 }}>
+            <Grid
+                sx={{ flexGrow: 1 }}
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+            >
+                <Grid item xs={12}>
+                    <Paper sx={{ p: 8 }}>
+                        <Grid container spacing={3}>
+                            <Grid item>
+                                Search:
+                                <input
+                                    id="search"
+                                    value={searchTerm}
+                                    onChange={handleSearch}
+                                />
+                                <div>{searchTerm}</div>
+                                {searchedFruits
+                                    ? searchedFruits.map((fruit, idx) => {
+                                          return (
+                                              <FruitTile
+                                                  key={idx}
+                                                  props={fruit}
+                                              />
+                                          );
+                                      })
+                                    : fruits.map((fruit, idx) => {
+                                          return (
+                                              <FruitTile
+                                                  key={idx}
+                                                  props={fruit}
+                                              />
+                                          );
+                                      })}
+                            </Grid>
+                        </Grid>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </Box>
     );
 };
-
-//     return (
-//         <Grid sx={{ flexGrow: 1 }} container spacing={2}>
-//             <Grid item xs={12}>
-//                 <Grid container spacing={2}>
-//                     {[0, 1, 2].map((value) => (
-//                         <Grid key={value} item>
-//                             <Paper
-//                                 sx={{
-//                                     height: 140,
-//                                     width: 100,
-//                                     backgroundColor: (theme) =>
-//                                         theme.palette.mode === 'dark'
-//                                             ? '#1A2027'
-//                                             : '#fff',
-//                                 }}
-//                             />
-//                         </Grid>
-//                     ))}
-//                 </Grid>
-//             </Grid>
-//             <Grid item xs={12}>
-//                 <Paper sx={{ p: 2 }}>
-//                     <Grid container>
-//                         <Grid item>
-//                             FruitScreen
-//                             <input
-//                                 id="search"
-//                                 value={searchTerm}
-//                                 onChange={handleSearch}
-//                             />
-//                             <div>{searchTerm}</div>
-//                             {searchedFruits
-//                                 ? searchedFruits.map((fruit, idx) => {
-//                                       return (
-//                                           <FruitTile key={idx} props={fruit} />
-//                                       );
-//                                   })
-//                                 : fruits.map((fruit, idx) => {
-//                                       return (
-//                                           <FruitTile key={idx} props={fruit} />
-//                                       );
-//                                   })}
-//                         </Grid>
-//                     </Grid>
-//                 </Paper>
-//             </Grid>
-//         </Grid>
-//     );
-// };
 
 export default FruitScreen;
