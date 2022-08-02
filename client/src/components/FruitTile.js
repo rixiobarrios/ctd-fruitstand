@@ -1,9 +1,7 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import Grid from '@mui/material/Grid';
-// import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {
     Button,
@@ -34,10 +32,7 @@ const FruitTile = ({ props }) => {
         const id = fruit._id;
         console.log('from id and body');
         console.log(id, body);
-        const res = await axios.put(
-            `http://localhost:5000/api/fruits/${id}/`,
-            body
-        );
+        const res = await axios.put(`http://localhost:5000/api/${id}/`, body);
         console.log('From fruit tile');
         console.log(res.data.countInStock);
         setFruit({ ...res.data });
@@ -71,12 +66,14 @@ const FruitTile = ({ props }) => {
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="340"
-                    image={fruit.image}
-                    alt={fruit.name}
-                />
+                <Link to={`/details/${fruit._id}`}>
+                    <CardMedia
+                        component="img"
+                        height="340"
+                        image={fruit.image}
+                        alt={fruit.name}
+                    />
+                </Link>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {fruit.name}

@@ -8,9 +8,7 @@ const FruitDetailScreen = () => {
 
     const getFruits = async () => {
         try {
-            const { data } = await axios.get(
-                `http://localhost:5000/api/fruits/${id}`
-            );
+            const { data } = await axios.get(`http://localhost:5000/api/${id}`);
             setFruits([...data]);
         } catch (error) {
             console.error(error);

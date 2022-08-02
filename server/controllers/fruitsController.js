@@ -1,6 +1,6 @@
 import asyncHandler from 'express-async-handler';
 import Fruit from '../models/Fruits.js';
-import util from 'util';
+// import util from 'util';
 import mailer from '../services/mailer.js';
 
 const getAllFruits = asyncHandler(async (req, res) => {
